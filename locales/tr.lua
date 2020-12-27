@@ -8,4 +8,6 @@ Locales["tr"] = {
 
     ["LAOT_AP_EXIT"] = "Evden Çık",
     ["LAOT_AP_EXITNOW"] = "~r~[E] ~w~- Evden Çık",
+    ["LAOT_AP_FIRSTSPAWN"] = "Devlet sana bir daire tehsis etti.",
+    ["LAOT_AP_YOURAPART"] = "Apartmanınız",
 }

@@ -9,18 +9,5 @@ C.BlipSettings = {
 	["OtherColor"] = 0, -- Sahip olmadığın apartmanların harita blip rengi [Default 0 - Beyaz]
 }
 
-Locales = {
-	["tr"] = {
-		["Enter_Apartment"] = "[ ~g~E ~w~- Apartmana Gir ]",
-		["Apartment_Menu"] = "Apartman Menüsü",
-		["Enter_Room"] = "Odana Gir",
-
-		["Stash_No"] = "Depoyu Aç",
-		["Stash"] = "[ ~b~E ~w~- Depoyu Aç ]",
-
-		["Exit_No"] = "Evden Çık",
-		["Exit"] = "[ ~r~E ~w~- Evden Çık ]",
-	},
-}
 
 

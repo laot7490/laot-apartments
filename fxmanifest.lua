@@ -19,6 +19,5 @@ server_scripts {
 }
 
 dependencies {
-    "laot-core",
     "laot-interior"
 }

@@ -62,7 +62,7 @@ CreateApartmentBlip = function()
 		if V.OwnerID == k then SetBlipColour(blip, C.BlipSettings["OwnerColor"]) else SetBlipColour(blip, C.BlipSettings["OtherColor"]) end
 		SetBlipAsShortRange(blip, true)
 		BeginTextCommandSetBlipName("STRING")
-		if V.OwnerID == k then AddTextComponentString('Apartmanın ['.. v["name"] ..']') else AddTextComponentString(v["name"]) end
+		if V.OwnerID == k then AddTextComponentString(''.. _U("LAOT_AP_YOURAPART") ..''' ['.. v["name"] ..']') else AddTextComponentString(v["name"]) end
 		EndTextCommandSetBlipName(blip)
 	end
 end
@@ -94,7 +94,7 @@ AddEventHandler("laot-apartments:client:FirstSpawn", function()
 	while not IsInteriorReady(interiorID) do
 		Citizen.Wait(100)
 	end
-	LAOT.Notification("inform", "Devlet sana bir daire tahsis etti.")
+	LAOT.Notification("inform", _U("LAOT_AP_FIRSTSPAWN"))
 	houseObj = {}
 	POIOffsets = {}
 	TriggerEvent("InteractSound_CL:PlayOnOne", "doorenter", 1.0)
