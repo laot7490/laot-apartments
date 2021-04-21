@@ -1,4 +1,4 @@
-Locales["en"] = {
+Locales["tr"] = {
     ["LAOT_AP_ENTER"] = "~g~[E] ~w~- Apartment Menu",
     ["LAOT_AP_MENU"] = "Apartment Menu",
     ["LAOT_AP_ENTERROOM"] = "Enter the Room",

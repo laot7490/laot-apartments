@@ -23,7 +23,7 @@ end)
 
 Citizen.CreateThread(function()
 	while LAOT == nil do
-		TriggerEvent('LAOTCore:getSharedObject', function(obj) LAOT = obj end)
+		TriggerEvent('LAOTCore:GetObject', function(obj) LAOT = obj end)
 		Citizen.Wait(0)
 	end
 end)
@@ -94,7 +94,7 @@ AddEventHandler("laot-apartments:client:FirstSpawn", function()
 	while not IsInteriorReady(interiorID) do
 		Citizen.Wait(100)
 	end
-	LAOT.Notification("inform", _U("LAOT_AP_FIRSTSPAWN"))
+	LAOT.Functions.Notify("inform", _U("LAOT_AP_FIRSTSPAWN"))
 	houseObj = {}
 	POIOffsets = {}
 	TriggerEvent("InteractSound_CL:PlayOnOne", "doorenter", 1.0)
@@ -177,11 +177,11 @@ Citizen.CreateThread(function()
 				exitDistance = GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()), home.x - POIOffsets.exit.x, home.y - POIOffsets.exit.y, home.z + POIOffsets.exit.z, true)
 				if exitDistance < 8 and exitDistance > 2 then
 					sleep = 1
-					LAOT.DrawText3D(home.x - POIOffsets.exit.x, home.y - POIOffsets.exit.y, home.z + POIOffsets.exit.z, _U("LAOT_AP_EXIT"))
+					LAOT.Functions.DrawText3D(home.x - POIOffsets.exit.x, home.y - POIOffsets.exit.y, home.z + POIOffsets.exit.z, _U("LAOT_AP_EXIT"))
 				end
 				if exitDistance < 2 then
 					sleep = 1
-					LAOT.DrawText3D(home.x - POIOffsets.exit.x, home.y - POIOffsets.exit.y, home.z + POIOffsets.exit.z, _U("LAOT_AP_EXITNOW"))
+					LAOT.Functions.DrawText3D(home.x - POIOffsets.exit.x, home.y - POIOffsets.exit.y, home.z + POIOffsets.exit.z, _U("LAOT_AP_EXITNOW"))
 					if IsControlJustPressed(0, Keys["E"]) then
 						leaveApartment()
 					end
@@ -191,11 +191,11 @@ Citizen.CreateThread(function()
 				stashDistance = GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()), home.x - POIOffsets.stash.x, home.y - POIOffsets.stash.y, home.z + POIOffsets.stash.z, true)
 				if stashDistance < 8 and stashDistance > 2 then
 					sleep = 1
-					LAOT.DrawText3D(home.x - POIOffsets.stash.x, home.y - POIOffsets.stash.y, home.z + POIOffsets.stash.z, _U("LAOT_AP_STASH"))
+					LAOT.Functions.DrawText3D(home.x - POIOffsets.stash.x, home.y - POIOffsets.stash.y, home.z + POIOffsets.stash.z, _U("LAOT_AP_STASH"))
 				end
 				if stashDistance < 2 then
 					sleep = 1
-					LAOT.DrawText3D(home.x - POIOffsets.stash.x, home.y - POIOffsets.stash.y, home.z + POIOffsets.stash.z, _U("LAOT_AP_OPENSTASH"))
+					LAOT.Functions.DrawText3D(home.x - POIOffsets.stash.x, home.y - POIOffsets.stash.y, home.z + POIOffsets.stash.z, _U("LAOT_AP_OPENSTASH"))
 					if IsControlJustPressed(0, Keys["E"]) then
 						OpenStash("laot-apartment", ESX.PlayerData.identifier)
 					end
@@ -260,7 +260,7 @@ Citizen.CreateThread(function()
 			for k, v in pairs(LAOTApartments) do
 				if GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()), v["coords"]["x"], v["coords"]["y"], v["coords"]["z"], true) < 8.5 and V.OwnerID == k then
 					sleep = 2
-					LAOT.DrawText3D(v["coords"]["x"], v["coords"]["y"], v["coords"]["z"], _U("LAOT_AP_ENTER"))
+					LAOT.Functions.DrawText3D(v["coords"]["x"], v["coords"]["y"], v["coords"]["z"], _U("LAOT_AP_ENTER"))
 					if IsControlJustPressed(0, 38) and GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()), v["coords"]["x"], v["coords"]["y"], v["coords"]["z"], true) < 3 then
 						openApartmentMenu(k)
 					end
